@@ -17,13 +17,13 @@ namespace PlayerContent
 
         private void Update()
         {
-            _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
-
             if (_isGrounded && _velocity.y < 0)
                 _velocity.y = -2f;
 
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
+
+            _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
             Vector3 move = transform.right * x + transform.forward * z;
             _controller.Move(move * _speed * Time.deltaTime);
 
