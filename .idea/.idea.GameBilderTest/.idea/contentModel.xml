@@ -7,8 +7,17 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Floor.cs" t="Include" />
           <e p="Ground.cs" t="Include" />
-          <e p="Item.cs" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="Iplaceable.cs" t="Include" />
+          </e>
+          <e p="ItemContent" t="Include">
+            <e p="Cube.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
+            <e p="Items.cs" t="Include" />
+            <e p="Sphere.cs" t="Include" />
+          </e>
           <e p="PlayerContent" t="Include">
             <e p="CameraMovement.cs" t="Include" />
             <e p="Dragger.cs" t="Include" />
@@ -16,6 +25,7 @@
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerReach.cs" t="Include" />
           </e>
+          <e p="Wall.cs" t="Include" />
         </e>
       </e>
       <e p="GameBilderTest.sln" t="IncludeFlat" />
