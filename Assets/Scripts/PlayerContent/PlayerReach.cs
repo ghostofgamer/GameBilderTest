@@ -12,20 +12,16 @@ public class PlayerReach : MonoBehaviour
 
     public Item Item { get; private set; }
 
+    private float currentRotation = 0f;
+
+
     public void SetItem(Item item)
     {
         Item = item;
         Item.transform.position = _defaultPositionItem.position;
-        /*Item.GetComponent<Rigidbody>().isKinematic = true;
-        Item.GetComponent<BoxCollider>().isTrigger = true;*/
         Item.transform.parent = transform;
-        // Item.SetMaterial(_materialFade);
         Item.ActivateBildStage();
-        
-        
-        
-        /*Item.transform.localPosition = Vector3.zero; 
-        Item.transform.localRotation = Quaternion.identity;*/
+        currentRotation = Item.transform.rotation.y;
     }
 
     private void Update()
@@ -52,7 +48,6 @@ public class PlayerReach : MonoBehaviour
                 if (hit.transform.TryGetComponent(out Item item))
                 {
                     SetItem(item);
-                    item.gameObject.layer = 8;
                 }
             }
         }
@@ -76,34 +71,62 @@ public class PlayerReach : MonoBehaviour
                         {
                             Item._isBildUpCube = true;
                             Item.ActivateCanPlace();
-                            
+
                             Item.transform.position = hit.collider.gameObject.transform.position;
+                            Item.transform.rotation = hit.collider.gameObject.transform.rotation;
                             float y = Item.transform.position.y + 3;
-                            Item.transform.position = new Vector3(Item.transform.position.x, y, Item.transform.position.z);
+                            Item.transform.position =
+                                new Vector3(Item.transform.position.x, y, Item.transform.position.z);
                         }
                         else
                         {
                             Item._isBildUpCube = false;
-                            
+
                             Vector3 surfacePoint = hit.point;
                             Vector3 surfaceNormal = hit.normal;
-                            Item.transform.position = surfacePoint + surfaceNormal * _offset;
-                            Item.transform.up = surfaceNormal;
+
+                            Vector3 newPosition = surfacePoint + surfaceNormal * _offset;
+
+                            if (Vector3.Dot(newPosition - surfacePoint, surfaceNormal) < 0)
+                            {
+                                newPosition = surfacePoint + surfaceNormal * Mathf.Abs(_offset);
+                            }
+
+                            Item.transform.position = newPosition;
+
+                            // Item.transform.position = surfacePoint + surfaceNormal * _offset;
+
+                            // Item.transform.up = surfaceNormal;
+
+
+                            /*// Выравниваем объект по нормали поверхности
+                            Quaternion targetRotation = Quaternion.LookRotation(surfaceNormal);
+                            Debug.Log("тапген " + targetRotation);
+                            Item.transform.rotation = targetRotation;*/
+
+
+                            // Ваша нормаль поверхности
+                            Vector3 upDirection = surfaceNormal;
+                            Vector3 forwardDirection =
+                                Vector3.Cross(upDirection,
+                                    Vector3.right); // Выбираем произвольное направление, перпендикулярное upDirection
+
+                            Quaternion targetRotation = Quaternion.LookRotation(forwardDirection, upDirection);
+                            Debug.Log("тапген " + targetRotation);
+                            Item.transform.rotation = targetRotation;
+
+
+                            Item.transform.Rotate(Vector3.up, currentRotation, Space.Self);
+
                             Item.ActivateCanPlace();
                         }
-
-
-                        /*Item.PositivePlaceBild();
-                        Item.SetPositiveMaterial();*/
                     }
                     else
                     {
                         Item._isBildUpCube = false;
-                        
+
                         Item.transform.position = _defaultPositionItem.position;
                         Item.DeactivateCanPlace();
-                        /*Item.DontBildPlace();
-                        Item.SetFadeMaterial();*/
                     }
                 }
             }
@@ -112,23 +135,28 @@ public class PlayerReach : MonoBehaviour
                 Debug.DrawLine(ray.origin, ray.origin + ray.direction * _reachBildDistance, Color.red);
                 Item.transform.position = _defaultPositionItem.position;
                 Item.DeactivateCanPlace();
-                /*Item.DontBildPlace();
-                Item.SetFadeMaterial();*/
             }
 
             if (Input.GetMouseButtonDown(1))
             {
                 if (Item != null && Item.IsPermissionBild)
                 {
-                    /*Item.GetComponent<Rigidbody>().isKinematic = false;
-                    Item.GetComponent<BoxCollider>().isTrigger = false;*/
                     Item.transform.parent = null;
-                    // Item.SetDefaultMaterial();
-                    Item.gameObject.layer = 0;
                     Item.DeactivateBildStage();
                     Item = null;
                 }
             }
+        }
+
+        if (Item != null)
+        {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            float step = 45;
+
+            if (scroll > 0)
+                currentRotation += step;
+            else if (scroll < 0)
+                currentRotation -= step;
         }
     }
 }

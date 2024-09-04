@@ -1,4 +1,3 @@
-using System.Xml;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -9,13 +8,14 @@ public class Item : MonoBehaviour
     [SerializeField] private Material _fadeMaterial;
     [SerializeField] private MeshRenderer _meshRenderer;
 
+    [SerializeField] private int _layerValue;
+
     protected bool IsBildStage;
     public bool IsPermissionBild;
     public bool _canTrigger;
     public bool _isCanPlace;
     public bool _isBildUpCube;
-
-
+    
     private void Update()
     {
         if (!IsBildStage)
@@ -77,18 +77,23 @@ public class Item : MonoBehaviour
 
     public virtual void ActivateBildStage()
     {
-        /*gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        gameObject.GetComponent<BoxCollider>().isTrigger = true;*/
         SetMaterial(_fadeMaterial);
         IsBildStage = true;
+        gameObject.layer = 8;
     }
 
     public virtual void DeactivateBildStage()
     {
-        /*gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        gameObject.GetComponent<BoxCollider>().isTrigger = false;*/
         SetMaterial(_defaultMaterial);
         IsBildStage = false;
+        gameObject.layer = _layerValue;
+        
+        
+        
+        IsPermissionBild = false;
+        _canTrigger = false;
+        _isCanPlace = false;
+        _isBildUpCube = false;
     }
 
     public void DontBildPlace()
