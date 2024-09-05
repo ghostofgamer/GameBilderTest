@@ -8,6 +8,16 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Floor.cs" t="Include" />
+          <e p="FSMContent" t="Include">
+            <e p="FSM.cs" t="Include" />
+            <e p="FSMExample.cs" t="Include" />
+            <e p="FSMState.cs" t="Include" />
+            <e p="States" t="Include">
+              <e p="PlayerDragger.cs" t="Include" />
+              <e p="StateAction.cs" t="Include" />
+              <e p="StateBuild.cs" t="Include" />
+            </e>
+          </e>
           <e p="Ground.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="Iplaceable.cs" t="Include" />

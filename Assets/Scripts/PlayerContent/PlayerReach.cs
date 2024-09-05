@@ -112,7 +112,7 @@ public class PlayerReach : MonoBehaviour
                                     Vector3.right); // Выбираем произвольное направление, перпендикулярное upDirection
 
                             Quaternion targetRotation = Quaternion.LookRotation(forwardDirection, upDirection);
-                            Debug.Log("тапген " + targetRotation);
+                           
                             Item.transform.rotation = targetRotation;
 
 
