@@ -17,8 +17,6 @@ public class StateBuild : FSMState
 
     public override void Stay()
     {
-        Debug.Log("Update state Bild");
-
         if (PlayerDragger.Item != null)
         {
             Ray ray = new Ray(PlayerDragger.transform.position, PlayerDragger.transform.forward);

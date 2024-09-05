@@ -21,11 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="ce1822c2-0d80-47a2-aade-82cefb351ad9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMInitializator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMExample.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMInitializator.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/PlayerDragger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/PlayerDragger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateBuild.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +44,20 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Wall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ground.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/SphereTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/ITriggerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/CubeTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMaterialChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IItemMovable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerContent/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/SphereMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Floor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/CubeMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enums/MaterialNames.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/ItemTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IPlaceable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -51,7 +66,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ground.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items.cs" />
@@ -60,12 +74,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/Iplaceable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/Ilaceable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IPlaceable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Floor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/States/PlayerDragger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSM.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/FSMState.cs" />
@@ -74,7 +84,28 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FSM/States/StateBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMInitializator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/SphereMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/IItemMovable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ITriggerable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITriggerable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/Itemtrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/SphereTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/CubeTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/ItemTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/CubeMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/itemmaterialChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/temmaterialChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enums/MaterialNames.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMaterialChanger.cs" />
       </list>
     </option>
   </component>
@@ -121,7 +152,8 @@
       <workItem from="1725361494407" duration="2203000" />
       <workItem from="1725364080605" duration="8126000" />
       <workItem from="1725438679391" duration="16965000" />
-      <workItem from="1725522335211" duration="7013000" />
+      <workItem from="1725522335211" duration="11378000" />
+      <workItem from="1725534778782" duration="3857000" />
     </task>
     <servers />
   </component>
@@ -146,6 +178,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="794" y="217" key="RiderGenerateDialog" timestamp="1725534471598">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="794" y="217" key="RiderGenerateDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1725534471598" />
     <state x="616" y="238" key="run.anything.popup" timestamp="1725452905322">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

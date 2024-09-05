@@ -7,7 +7,7 @@ public class Dragger : MonoBehaviour
     
     public Item Item { get; private set; }
 
-    public void SetItem(Item item)
+    /*public void SetItem(Item item)
     {
         Item = item;
         Item.transform.position = _defaultPositionItem.position;
@@ -16,7 +16,7 @@ public class Dragger : MonoBehaviour
         Item.SetMaterial(_materialFade);
         /*
         _item.transform.localPosition = Vector3.zero; 
-        _item.transform.localRotation = Quaternion.identity;*/
+        _item.transform.localRotation = Quaternion.identity;#1#
     }
 
     private void Update()
@@ -31,5 +31,5 @@ public class Dragger : MonoBehaviour
                 Item = null;
             }
         }
-    }
+    }*/
 }

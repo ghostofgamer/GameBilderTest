@@ -24,7 +24,7 @@ public class PlayerReach : MonoBehaviour
         currentRotation = Item.transform.rotation.y;
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Item == null)
         {
@@ -99,10 +99,10 @@ public class PlayerReach : MonoBehaviour
                             // Item.transform.up = surfaceNormal;
 
 
-                            /*// Выравниваем объект по нормали поверхности
+                            /#1#/ Выравниваем объект по нормали поверхности
                             Quaternion targetRotation = Quaternion.LookRotation(surfaceNormal);
                             Debug.Log("тапген " + targetRotation);
-                            Item.transform.rotation = targetRotation;*/
+                            Item.transform.rotation = targetRotation;#1#
 
 
                             // Ваша нормаль поверхности
@@ -158,5 +158,5 @@ public class PlayerReach : MonoBehaviour
             else if (scroll < 0)
                 currentRotation -= step;
         }
-    }
+    }*/
 }

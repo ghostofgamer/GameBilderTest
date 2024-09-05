@@ -1,35 +1,12 @@
 using UnityEngine;
 
-public class Sphere : Item,IPlaceable
+public class Sphere : Item, IPlaceable
 {
     [SerializeField] private SphereCollider _sphereCollider;
-    
+
     public bool CanPlaceOn(GameObject target)
     {
-        return target.layer == LayerMask.NameToLayer("Wall");
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!IsBildStage)
-            return;
-        
-        if (other.TryGetComponent(out Item item)||other.TryGetComponent(out Floor floor))
-        {
-            _canTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!IsBildStage)
-            return;
-  
-
-        if (other.TryGetComponent(out Item item)||other.TryGetComponent(out Floor floor))
-        {
-            _canTrigger = false;
-        }
+        return target.TryGetComponent<Wall>(out _);
     }
 
     public override void ActivateBildStage()

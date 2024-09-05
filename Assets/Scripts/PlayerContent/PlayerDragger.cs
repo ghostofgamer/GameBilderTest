@@ -1,3 +1,4 @@
+using Interfaces;
 using UnityEngine;
 
 public class PlayerDragger : MonoBehaviour
@@ -5,13 +6,15 @@ public class PlayerDragger : MonoBehaviour
     [SerializeField] private Transform _defaultPositionItem;
     [SerializeField] private float _offset = 0.1f;
 
-    public Item Item { get; private set; }
+    private IItemMovable ItemMovable { get; set; }
     private float currentRotation = 0f;
-
-
+    
+    public Item Item { get; private set; }
+    
     public void SetItem(Item item)
     {
         Item = item;
+        ItemMovable = Item.GetComponent<IItemMovable>();
         Item.transform.position = _defaultPositionItem.position;
         Item.transform.parent = transform;
         Item.ActivateBildStage();
@@ -20,41 +23,12 @@ public class PlayerDragger : MonoBehaviour
 
     public void Drag(RaycastHit hit)
     {
-        if (Item.GetComponent<Cube>() && hit.collider.gameObject.GetComponent<Cube>())
-        {
-            Item._isBildUpCube = true;
-            Item.ActivateCanPlace();
-            Item.transform.position = hit.collider.gameObject.transform.position;
-            Item.transform.rotation = hit.collider.gameObject.transform.rotation;
-            float y = Item.transform.position.y + 3;
-            Item.transform.position =
-                new Vector3(Item.transform.position.x, y, Item.transform.position.z);
-        }
-        else
-        {
-            Item._isBildUpCube = false;
-            Vector3 surfacePoint = hit.point;
-            Vector3 surfaceNormal = hit.normal;
-            Vector3 newPosition = surfacePoint + surfaceNormal * _offset;
-
-            if (Vector3.Dot(newPosition - surfacePoint, surfaceNormal) < 0)
-            {
-                newPosition = surfacePoint + surfaceNormal * Mathf.Abs(_offset);
-            }
-
-            Item.transform.position = newPosition;
-            Vector3 upDirection = surfaceNormal;
-            Vector3 forwardDirection = Vector3.Cross(upDirection, Vector3.right);
-            Quaternion targetRotation = Quaternion.LookRotation(forwardDirection, upDirection);
-            Item.transform.rotation = targetRotation;
-            Item.transform.Rotate(Vector3.up, currentRotation, Space.Self);
-            Item.ActivateCanPlace();
-        }
+        ItemMovable.Move(hit, _offset, currentRotation);
     }
 
     public void Drop()
     {
-        if (Item != null && Item.IsPermissionBild)
+        if (Item != null && Item.IsPermissionBuild)
         {
             Item.transform.parent = null;
             Item.DeactivateBildStage();
@@ -76,7 +50,11 @@ public class PlayerDragger : MonoBehaviour
     public void ReturnPosition()
     {
         Item.transform.position = _defaultPositionItem.position;
-        Item.DeactivateCanPlace();
+        // Item.DeactivateCanPlace();
+        
+        // Item.SetCanPlaceValue(false);
+        
+        Item.ReturnDefaultSettings();
     }
 
     public void SetBoolItem()

@@ -2,115 +2,89 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private Material _defaultMaterial;
-    [SerializeField] private Material _greenMaterial;
-    [SerializeField] private Material _redMaterial;
-    [SerializeField] private Material _fadeMaterial;
-    [SerializeField] private MeshRenderer _meshRenderer;
-
     [SerializeField] private int _layerValue;
-
-    protected bool IsBildStage;
-    public bool IsPermissionBild;
-    public bool _canTrigger;
-    public bool _isCanPlace;
-    public bool _isBildUpCube;
+    [SerializeField] private ItemMaterialChanger _itemMaterialChanger;
     
+    private bool _isCanPlace;
+    private bool _isInvalidLocation;
+    
+    
+    public bool _isBildUpCube;
+
+
+    public bool IsPermissionBuild { get; private set; }
+    
+    public bool IsBuildStage { get; private set; }
+
+    private void Start()
+    {
+        _itemMaterialChanger = GetComponent<ItemMaterialChanger>();
+    }
+
     private void Update()
     {
-        if (!IsBildStage)
+        if (!IsBuildStage)
             return;
 
-        if (!_isCanPlace && !_canTrigger)
+        if (!_isCanPlace && !_isInvalidLocation)
         {
-            DontBildPlace();
-            SetFadeMaterial();
+            NegativeBuildPlace();
+            _itemMaterialChanger.SetMaterial(MaterialNames.Fade);
         }
 
-        if (_canTrigger)
+        if (_isInvalidLocation)
         {
-            SetNegativeMaterial();
-            DontBildPlace();
+            _itemMaterialChanger.SetMaterial(MaterialNames.Negative);
+            NegativeBuildPlace();
         }
 
-        if (!_canTrigger && _isCanPlace || _isCanPlace && _isBildUpCube)
+        if (!_isInvalidLocation && _isCanPlace || _isCanPlace && _isBildUpCube)
         {
-            SetPositiveMaterial();
-            PositivePlaceBild();
+            _itemMaterialChanger.SetMaterial(MaterialNames.Positive);
+            PositiveBuildPlace();
         }
-    }
-
-    public void ActivateCanPlace()
-    {
-        _isCanPlace = true;
-    }
-
-    public void DeactivateCanPlace()
-    {
-        _isCanPlace = false;
-    }
-
-    public void SetDefaultMaterial()
-    {
-        SetMaterial(_defaultMaterial);
-    }
-
-    public void SetMaterial(Material material)
-    {
-        _meshRenderer.material = material;
-    }
-
-    public void SetPositiveMaterial()
-    {
-        SetMaterial(_greenMaterial);
-    }
-
-    public void SetNegativeMaterial()
-    {
-        SetMaterial(_redMaterial);
-    }
-
-    public void SetFadeMaterial()
-    {
-        SetMaterial(_fadeMaterial);
     }
 
     public virtual void ActivateBildStage()
     {
-        SetMaterial(_fadeMaterial);
-        IsBildStage = true;
+        _itemMaterialChanger.SetMaterial(MaterialNames.Fade);
+        IsBuildStage = true;
         gameObject.layer = 8;
     }
 
     public virtual void DeactivateBildStage()
     {
-        SetMaterial(_defaultMaterial);
-        IsBildStage = false;
+        _itemMaterialChanger.SetMaterial(MaterialNames.Normal);
+        IsBuildStage = false;
         gameObject.layer = _layerValue;
-        
-        
-        
-        IsPermissionBild = false;
-        _canTrigger = false;
+        ReturnDefaultSettings();
+    }
+
+    public void ReturnDefaultSettings()
+    {
+        IsPermissionBuild = false;
+        _isInvalidLocation = false;
         _isCanPlace = false;
-        _isBildUpCube = false;
+        _isBildUpCube = false; 
+    }
+    
+    private void NegativeBuildPlace()
+    {
+        IsPermissionBuild = false;
     }
 
-    public void DontBildPlace()
+    private void PositiveBuildPlace()
     {
-        /*
-        if (_canTrigger)
-            return;
-            */
-
-        IsPermissionBild = false;
+        IsPermissionBuild = true;
+    }
+    
+    public void SetCanPlaceValue(bool canPlace)
+    {
+        _isCanPlace = canPlace;
     }
 
-    public void PositivePlaceBild()
+    public void SetInvalidPosition(bool invalidPosition)
     {
-        /*if (_canTrigger)
-            return;*/
-
-        IsPermissionBild = true;
+        _isInvalidLocation = invalidPosition;
     }
 }

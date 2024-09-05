@@ -7,6 +7,9 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Enums" t="Include">
+            <e p="MaterialNames.cs" t="Include" />
+          </e>
           <e p="Floor.cs" t="Include" />
           <e p="FSMContent" t="Include">
             <e p="FSM.cs" t="Include" />
@@ -19,13 +22,24 @@
           </e>
           <e p="Ground.cs" t="Include" />
           <e p="Interfaces" t="Include">
+            <e p="IItemMovable.cs" t="Include" />
             <e p="Iplaceable.cs" t="Include" />
+            <e p="ITriggerable.cs" t="Include" />
           </e>
           <e p="ItemContent" t="Include">
             <e p="Cube.cs" t="Include" />
+            <e p="CubeMovement.cs" t="Include" />
             <e p="Item.cs" t="Include" />
+            <e p="itemmaterialChanger.cs" t="Include" />
+            <e p="ItemMovement.cs" t="Include" />
             <e p="Items.cs" t="Include" />
+            <e p="ItemTriggers" t="Include">
+              <e p="CubeTrigger.cs" t="Include" />
+              <e p="ItemTrigger.cs" t="Include" />
+              <e p="SphereTrigger.cs" t="Include" />
+            </e>
             <e p="Sphere.cs" t="Include" />
+            <e p="SphereMovement.cs" t="Include" />
           </e>
           <e p="PlayerContent" t="Include">
             <e p="CameraMovement.cs" t="Include" />
