@@ -9,7 +9,7 @@ public class FSM
 
     public void Update()
     {
-        _stateCurrent?.Stay();
+        _stateCurrent?.UpdatePosition();
     }
 
     public void AddState(FSMState state)

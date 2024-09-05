@@ -15,7 +15,7 @@ public class StateAction : FSMState
        
     }
 
-    public override void Stay()
+    public override void UpdatePosition()
     {
         Debug.Log("Update state Action");
 

@@ -15,7 +15,7 @@ public class StateBuild : FSMState
         Debug.Log("Exit state Bild");
     }
 
-    public override void Stay()
+    public override void UpdatePosition()
     {
         if (PlayerDragger.Item != null)
         {
@@ -31,14 +31,9 @@ public class StateBuild : FSMState
                     IPlaceable placeable = PlayerDragger.Item.GetComponent<IPlaceable>();
 
                     if (placeable != null && placeable.CanPlaceOn(hit.collider.gameObject))
-                    {
                         PlayerDragger.Drag(hit);
-                    }
                     else
-                    {
-                        PlayerDragger.SetBoolItem();
                         PlayerDragger.ReturnPosition();
-                    }
                 }
             }
             else

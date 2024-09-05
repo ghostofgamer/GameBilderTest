@@ -6,9 +6,10 @@ public class PlayerDragger : MonoBehaviour
     [SerializeField] private Transform _defaultPositionItem;
     [SerializeField] private float _offset = 0.1f;
 
-    private IItemMovable ItemMovable { get; set; }
     private float currentRotation = 0f;
     
+    private IItemMovable ItemMovable { get; set; }
+
     public Item Item { get; private set; }
     
     public void SetItem(Item item)
@@ -50,15 +51,6 @@ public class PlayerDragger : MonoBehaviour
     public void ReturnPosition()
     {
         Item.transform.position = _defaultPositionItem.position;
-        // Item.DeactivateCanPlace();
-        
-        // Item.SetCanPlaceValue(false);
-        
         Item.ReturnDefaultSettings();
-    }
-
-    public void SetBoolItem()
-    {
-        Item._isBildUpCube = false;
     }
 }

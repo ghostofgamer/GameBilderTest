@@ -20,17 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce1822c2-0d80-47a2-aade-82cefb351ad9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSM.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateBuild.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/CubeMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/CubeMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/CubeTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/CubeTrigger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,22 +90,22 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ITriggerable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interfaces/ITriggerable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/Itemtrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Sphere.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/SphereTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/CubeTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/ItemTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/CubeMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/itemmaterialChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/temmaterialChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enums/MaterialNames.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMaterialChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/CubeMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/CubeTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/ItemTriggers/ItemTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Cube.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ItemContent/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" />
       </list>
     </option>
   </component>
@@ -153,7 +153,7 @@
       <workItem from="1725364080605" duration="8126000" />
       <workItem from="1725438679391" duration="16965000" />
       <workItem from="1725522335211" duration="11378000" />
-      <workItem from="1725534778782" duration="3857000" />
+      <workItem from="1725534778782" duration="8993000" />
     </task>
     <servers />
   </component>
@@ -186,9 +186,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="616" y="238" key="run.anything.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1725452905322" />
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1725449923777">
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1725542780311">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1725449923777" />
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1725542780311" />
   </component>
 </project>

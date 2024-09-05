@@ -11,6 +11,6 @@ public abstract class FSMState
     }
     
     public virtual void Enter() { }
-    public virtual void Stay() { }
+    public virtual void UpdatePosition() { }
     public virtual void Exit() { }
 }

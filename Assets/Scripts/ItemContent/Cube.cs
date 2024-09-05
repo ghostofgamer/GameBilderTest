@@ -20,4 +20,13 @@ public class Cube : Item, IPlaceable
         base.DeactivateBildStage();
         _boxCollider.isTrigger = false;
     }
+
+    protected override void UpdatePositiveBuildStage()
+    {
+        if (!IsInvalidLocation && IsCanPlace || IsCanPlace && IsCanBuildTop)
+        {
+            ItemMaterialChanger.SetMaterial(MaterialNames.Positive);
+            PositiveBuildPlace();
+        }
+    }
 }
