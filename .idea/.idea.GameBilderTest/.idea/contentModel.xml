@@ -10,10 +10,9 @@
           <e p="Floor.cs" t="Include" />
           <e p="FSMContent" t="Include">
             <e p="FSM.cs" t="Include" />
-            <e p="FSMExample.cs" t="Include" />
+            <e p="FSMInitializator.cs" t="Include" />
             <e p="FSMState.cs" t="Include" />
             <e p="States" t="Include">
-              <e p="PlayerDragger.cs" t="Include" />
               <e p="StateAction.cs" t="Include" />
               <e p="StateBuild.cs" t="Include" />
             </e>
@@ -32,6 +31,7 @@
             <e p="CameraMovement.cs" t="Include" />
             <e p="Dragger.cs" t="Include" />
             <e p="Player.cs" t="Include" />
+            <e p="PlayerDragger.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerReach.cs" t="Include" />
           </e>

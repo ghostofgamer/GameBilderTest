@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FSMExample : MonoBehaviour
+public class FSMInitializator : MonoBehaviour
 {
     [SerializeField] private PlayerDragger _playerDragger;
     [SerializeField] private float _reachDistance = 5f;

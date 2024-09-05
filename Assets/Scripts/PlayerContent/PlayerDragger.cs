@@ -24,7 +24,6 @@ public class PlayerDragger : MonoBehaviour
         {
             Item._isBildUpCube = true;
             Item.ActivateCanPlace();
-
             Item.transform.position = hit.collider.gameObject.transform.position;
             Item.transform.rotation = hit.collider.gameObject.transform.rotation;
             float y = Item.transform.position.y + 3;
@@ -34,10 +33,8 @@ public class PlayerDragger : MonoBehaviour
         else
         {
             Item._isBildUpCube = false;
-
             Vector3 surfacePoint = hit.point;
             Vector3 surfaceNormal = hit.normal;
-
             Vector3 newPosition = surfacePoint + surfaceNormal * _offset;
 
             if (Vector3.Dot(newPosition - surfacePoint, surfaceNormal) < 0)
@@ -46,19 +43,11 @@ public class PlayerDragger : MonoBehaviour
             }
 
             Item.transform.position = newPosition;
-
             Vector3 upDirection = surfaceNormal;
-            Vector3 forwardDirection =
-                Vector3.Cross(upDirection,
-                    Vector3.right);
-
+            Vector3 forwardDirection = Vector3.Cross(upDirection, Vector3.right);
             Quaternion targetRotation = Quaternion.LookRotation(forwardDirection, upDirection);
-
             Item.transform.rotation = targetRotation;
-
-
             Item.transform.Rotate(Vector3.up, currentRotation, Space.Self);
-
             Item.ActivateCanPlace();
         }
     }
