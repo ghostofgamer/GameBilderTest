@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface IPlaceable
+namespace Interfaces
 {
-   public bool CanPlaceOn(GameObject target);
+   public interface IPlaceable
+   {
+      public bool CanPlaceOn(GameObject target);
+   }
 }

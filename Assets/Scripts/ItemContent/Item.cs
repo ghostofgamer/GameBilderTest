@@ -1,3 +1,4 @@
+using Enums;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -7,7 +8,7 @@ public class Item : MonoBehaviour
 
     private int _ignoreLayer = 8;
     
-    public ItemMaterialChanger ItemMaterialChanger => _itemMaterialChanger;
+    protected ItemMaterialChanger ItemMaterialChanger => _itemMaterialChanger;
     
     protected bool IsCanPlace{ get; private set; }
     
@@ -38,6 +39,44 @@ public class Item : MonoBehaviour
         UpdatePositiveBuildStage();
     }
 
+    public virtual void ActivateBildStage()
+    {
+        _itemMaterialChanger.SetMaterial(MaterialNames.Fade);
+        IsBuildStage = true;
+        gameObject.layer = _ignoreLayer;
+    }
+
+    public virtual void DeactivateBildStage()
+    {
+        _itemMaterialChanger.SetMaterial(MaterialNames.Normal);
+        IsBuildStage = false;
+        gameObject.layer = _layerValue;
+        ReturnDefaultSettings();
+    }
+
+    public void ReturnDefaultSettings()
+    {
+        IsPermissionBuild = false;
+        IsInvalidLocation = false;
+        IsCanPlace = false;
+        IsCanBuildTop = false;
+    }
+
+    public void SetCanPlaceValue(bool canPlace)
+    {
+        IsCanPlace = canPlace;
+    }
+
+    public void SetInvalidPosition(bool invalidPosition)
+    {
+        IsInvalidLocation = invalidPosition;
+    }
+
+    public void SetValueTopPosition(bool valueTop)
+    {
+        IsCanBuildTop = valueTop;
+    }
+
     protected virtual void UpdateNegativeBuildStage()
     {
         if (!IsCanPlace && !IsInvalidLocation)
@@ -62,51 +101,13 @@ public class Item : MonoBehaviour
         }
     }
 
-    public virtual void ActivateBildStage()
-    {
-        _itemMaterialChanger.SetMaterial(MaterialNames.Fade);
-        IsBuildStage = true;
-        gameObject.layer = _ignoreLayer;
-    }
-
-    public virtual void DeactivateBildStage()
-    {
-        _itemMaterialChanger.SetMaterial(MaterialNames.Normal);
-        IsBuildStage = false;
-        gameObject.layer = _layerValue;
-        ReturnDefaultSettings();
-    }
-
-    public void ReturnDefaultSettings()
-    {
-        IsPermissionBuild = false;
-        IsInvalidLocation = false;
-        IsCanPlace = false;
-        IsCanBuildTop = false;
-    }
-
-    protected void NegativeBuildPlace()
-    {
-        IsPermissionBuild = false;
-    }
-
     protected void PositiveBuildPlace()
     {
         IsPermissionBuild = true;
     }
 
-    public void SetCanPlaceValue(bool canPlace)
+    private void NegativeBuildPlace()
     {
-        IsCanPlace = canPlace;
-    }
-
-    public void SetInvalidPosition(bool invalidPosition)
-    {
-        IsInvalidLocation = invalidPosition;
-    }
-
-    public void SetValueTopPosition(bool valueTop)
-    {
-        IsCanBuildTop = valueTop;
+        IsPermissionBuild = false;
     }
 }

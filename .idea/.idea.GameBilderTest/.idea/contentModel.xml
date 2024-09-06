@@ -10,7 +10,11 @@
           <e p="Enums" t="Include">
             <e p="MaterialNames.cs" t="Include" />
           </e>
-          <e p="Floor.cs" t="Include" />
+          <e p="EnvironmentContent" t="Include">
+            <e p="Environment.cs" t="Include" />
+            <e p="Floor.cs" t="Include" />
+            <e p="Wall.cs" t="Include" />
+          </e>
           <e p="FSMContent" t="Include">
             <e p="FSM.cs" t="Include" />
             <e p="FSMInitializator.cs" t="Include" />
@@ -20,7 +24,6 @@
               <e p="StateBuild.cs" t="Include" />
             </e>
           </e>
-          <e p="Ground.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="IItemMovable.cs" t="Include" />
             <e p="Iplaceable.cs" t="Include" />
@@ -32,7 +35,6 @@
             <e p="Item.cs" t="Include" />
             <e p="itemmaterialChanger.cs" t="Include" />
             <e p="ItemMovement.cs" t="Include" />
-            <e p="Items.cs" t="Include" />
             <e p="ItemTriggers" t="Include">
               <e p="CubeTrigger.cs" t="Include" />
               <e p="ItemTrigger.cs" t="Include" />
@@ -49,7 +51,6 @@
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerReach.cs" t="Include" />
           </e>
-          <e p="Wall.cs" t="Include" />
         </e>
       </e>
       <e p="GameBilderTest.sln" t="IncludeFlat" />

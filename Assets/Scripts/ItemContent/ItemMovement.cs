@@ -5,6 +5,13 @@ public abstract class ItemMovement : MonoBehaviour,IItemMovable
 {
     protected Item Item;
 
+    private Vector3 _surfacePoint;
+    private Vector3 _surfaceNormal;
+    private Vector3 _newPosition;
+    private Vector3 _upDirection;
+    private Vector3 _forwardDirection;
+    private Quaternion _targetRotation;
+    
     private void Start()
     {
         Item = GetComponent<Item>();
@@ -12,18 +19,18 @@ public abstract class ItemMovement : MonoBehaviour,IItemMovable
 
     public virtual void Move(RaycastHit hit, float offset, float currentRotation)
     {
-        Vector3 surfacePoint = hit.point;
-        Vector3 surfaceNormal = hit.normal;
-        Vector3 newPosition = surfacePoint + surfaceNormal * offset;
+        _surfacePoint = hit.point;
+        _surfaceNormal = hit.normal;
+        _newPosition = _surfacePoint + _surfaceNormal * offset;
 
-        if (Vector3.Dot(newPosition - surfacePoint, surfaceNormal) < 0)
-            newPosition = surfacePoint + surfaceNormal * Mathf.Abs(offset);
+        if (Vector3.Dot(_newPosition - _surfacePoint, _surfaceNormal) < 0)
+            _newPosition = _surfacePoint + _surfaceNormal * Mathf.Abs(offset);
 
-        Item.transform.position = newPosition;
-        Vector3 upDirection = surfaceNormal;
-        Vector3 forwardDirection = Vector3.Cross(upDirection, Vector3.right);
-        Quaternion targetRotation = Quaternion.LookRotation(forwardDirection, upDirection);
-        Item.transform.rotation = targetRotation;
+        Item.transform.position = _newPosition;
+        _upDirection = _surfaceNormal;
+        _forwardDirection = Vector3.Cross(_upDirection, Vector3.right);
+        _targetRotation = Quaternion.LookRotation(_forwardDirection, _upDirection);
+        Item.transform.rotation = _targetRotation;
         Item.transform.Rotate(Vector3.up, currentRotation, Space.Self);
         Item.SetCanPlaceValue(true);
     }

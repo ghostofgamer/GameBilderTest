@@ -1,16 +1,17 @@
 
-public abstract class FSMState
+namespace FSMContent
 {
-    protected readonly FSM Fsm;
-    protected readonly PlayerDragger PlayerDragger;
-
-    public FSMState(FSM fsm,PlayerDragger playerDragger)
+    public abstract class FSMState
     {
-        Fsm = fsm;
-        PlayerDragger = playerDragger;
+        protected readonly FSM Fsm;
+        protected readonly PlayerDragger PlayerDragger;
+
+        protected FSMState(FSM fsm,PlayerDragger playerDragger)
+        {
+            Fsm = fsm;
+            PlayerDragger = playerDragger;
+        }
+        
+        public virtual void UpdateState() { }
     }
-    
-    public virtual void Enter() { }
-    public virtual void UpdatePosition() { }
-    public virtual void Exit() { }
 }

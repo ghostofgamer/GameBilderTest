@@ -1,13 +1,17 @@
+using EnvironmentContent;
 using UnityEngine;
 
-public class CubeTrigger : ItemTrigger
+namespace ItemTriggers
 {
-    protected override void CheckTrigger(Collider other, bool value)
+    public class CubeTrigger : ItemTrigger
     {
-        if (!Item.IsBuildStage || Item.IsCanBuildTop)
-            return;
+        protected override void CheckTrigger(Collider other, bool value)
+        {
+            if (!Item.IsBuildStage || Item.IsCanBuildTop)
+                return;
 
-        if (other.TryGetComponent<Item>(out _) || other.TryGetComponent<Wall>(out _))
-            Item.SetInvalidPosition(value);
+            if (other.TryGetComponent<Item>(out _) || other.TryGetComponent<Wall>(out _))
+                Item.SetInvalidPosition(value);
+        }
     }
 }

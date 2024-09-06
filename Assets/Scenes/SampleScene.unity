@@ -160,7 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerValue: 0
   _itemMaterialChanger: {fileID: 0}
-  _isBildUpCube: 0
   _sphereCollider: {fileID: 47306792}
 --- !u!54 &47306791
 Rigidbody:
@@ -429,7 +428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerValue: 0
   _itemMaterialChanger: {fileID: 0}
-  _isBildUpCube: 0
   _sphereCollider: {fileID: 120198767}
 --- !u!114 &120198774
 MonoBehaviour:
@@ -902,7 +900,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerValue: 0
   _itemMaterialChanger: {fileID: 0}
-  _isBildUpCube: 0
   _sphereCollider: {fileID: 678052984}
 --- !u!54 &678052983
 Rigidbody:
@@ -1635,7 +1632,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerValue: 9
   _itemMaterialChanger: {fileID: 0}
-  _isBildUpCube: 0
   _boxCollider: {fileID: 989395512}
 --- !u!54 &989395511
 Rigidbody:
@@ -1904,7 +1900,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerValue: 9
   _itemMaterialChanger: {fileID: 0}
-  _isBildUpCube: 0
   _boxCollider: {fileID: 1109725956}
 --- !u!114 &1109725963
 MonoBehaviour:
@@ -2316,7 +2311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1855091505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2331,7 +2326,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerValue: 9
   _itemMaterialChanger: {fileID: 0}
-  _isBildUpCube: 0
   _boxCollider: {fileID: 1855091507}
 --- !u!54 &1855091506
 Rigidbody:

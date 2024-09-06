@@ -13,10 +13,10 @@ public class CubeMovement : ItemMovement
                 Item.SetValueTopPosition(true);
 
             Item.SetCanPlaceValue(true);
-            Item.transform.position = hit.collider.gameObject.transform.position;
-            Item.transform.rotation = hit.collider.gameObject.transform.rotation;
-            _yPosition = Item.transform.position.y + _offset;
-            Item.transform.position = new Vector3(Item.transform.position.x, _yPosition, Item.transform.position.z);
+            transform.position = hit.collider.gameObject.transform.position;
+            transform.rotation = hit.collider.gameObject.transform.rotation;
+            _yPosition = transform.position.y + _offset;
+            transform.position = new Vector3(transform.position.x, _yPosition, transform.position.z);
         }
         else
         {

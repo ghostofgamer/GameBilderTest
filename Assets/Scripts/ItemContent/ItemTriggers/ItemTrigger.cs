@@ -1,23 +1,27 @@
+using Interfaces;
 using UnityEngine;
 
-public abstract class ItemTrigger : MonoBehaviour,ITriggerable
+namespace ItemTriggers
 {
-    protected Item Item { get; private set; }
-
-    private void Start()
+    public abstract class ItemTrigger : MonoBehaviour,ITriggerable
     {
-        Item = GetComponent<Item>();
-    }
+        protected Item Item { get; private set; }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        CheckTrigger(other,true);
-    }
+        private void Start()
+        {
+            Item = GetComponent<Item>();
+        }
 
-    public void OnTriggerExit(Collider other)
-    {
-        CheckTrigger(other,false);
-    }
+        public void OnTriggerEnter(Collider other)
+        {
+            CheckTrigger(other,true);
+        }
 
-    protected abstract void CheckTrigger(Collider other,bool value);
+        public void OnTriggerExit(Collider other)
+        {
+            CheckTrigger(other,false);
+        }
+
+        protected abstract void CheckTrigger(Collider other,bool value);
+    }
 }

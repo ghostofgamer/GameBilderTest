@@ -1,3 +1,6 @@
+using Enums;
+using EnvironmentContent;
+using Interfaces;
 using UnityEngine;
 
 public class Cube : Item, IPlaceable
@@ -8,7 +11,7 @@ public class Cube : Item, IPlaceable
     {
         return target.TryGetComponent<Floor>(out _) || target.TryGetComponent<Cube>(out _);
     }
-    
+
     public override void ActivateBildStage()
     {
         base.ActivateBildStage();

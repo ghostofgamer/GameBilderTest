@@ -1,68 +1,58 @@
+using EnvironmentContent;
+using Interfaces;
 using UnityEngine;
 
-public class StateBuild : FSMState
+namespace FSMContent.States
 {
-    private readonly LayerMask _ignoreLayers;
-    private readonly float _reachBildDistance;
-
-    public override void Enter()
+    public class StateBuild : FSMState
     {
-        Debug.Log("Enter state Bild");
-    }
+        private readonly LayerMask _ignoreLayers;
+        private readonly float _reachBildDistance;
 
-    public override void Exit()
-    {
-        Debug.Log("Exit state Bild");
-    }
+        private Ray _ray;
+        private RaycastHit _hit;
+        private IPlaceable _placeable;
 
-    public override void UpdatePosition()
-    {
-        if (PlayerDragger.Item != null)
+        public StateBuild(FSM fsm, PlayerDragger playerDragger, LayerMask ignoreLayers, float reachBildDistance) : base(
+            fsm,
+            playerDragger)
         {
-            Ray ray = new Ray(PlayerDragger.transform.position, PlayerDragger.transform.forward);
-            RaycastHit hit;
+            _ignoreLayers = ignoreLayers;
+            _reachBildDistance = reachBildDistance;
+        }
 
-            if (Physics.Raycast(ray, out hit, _reachBildDistance, ~_ignoreLayers))
+        public override void UpdateState()
+        {
+            if (PlayerDragger.Item != null)
             {
-                Debug.DrawLine(ray.origin, hit.point, Color.green);
+                _ray = new Ray(PlayerDragger.transform.position, PlayerDragger.transform.forward);
 
-                if (hit.transform.TryGetComponent(out Ground ground) || hit.transform.TryGetComponent(out Item item))
+                if (Physics.Raycast(_ray, out _hit, _reachBildDistance, ~_ignoreLayers))
                 {
-                    IPlaceable placeable = PlayerDragger.Item.GetComponent<IPlaceable>();
+                    if (_hit.transform.TryGetComponent<Environment>(out _) || _hit.transform.TryGetComponent<Item>(out _))
+                    {
+                        _placeable = PlayerDragger.Item.GetComponent<IPlaceable>();
 
-                    if (placeable != null && placeable.CanPlaceOn(hit.collider.gameObject))
-                        PlayerDragger.Drag(hit);
-                    else
-                        PlayerDragger.ReturnPosition();
+                        if (_placeable != null && _placeable.CanPlaceOn(_hit.collider.gameObject))
+                            PlayerDragger.Drag(_hit);
+                        else
+                            PlayerDragger.ReturnPosition();
+                    }
                 }
-            }
-            else
-            {
-                Debug.DrawLine(ray.origin, ray.origin + ray.direction * _reachBildDistance, Color.red);
-                PlayerDragger.ReturnPosition();
+                else
+                {
+                    PlayerDragger.ReturnPosition();
+                }
+
+                if (Input.GetMouseButtonDown(0))
+                    PlayerDragger.Drop();
+
+                if (PlayerDragger.Item == null)
+                    Fsm.SetState<StateAction>();
             }
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                PlayerDragger.Drop();
-            }
-
-            if (PlayerDragger.Item == null)
-            {
-                Fsm.SetState<StateAction>();
-            }
+            if (PlayerDragger.Item != null)
+                PlayerDragger.ItemRotate();
         }
-
-        if (PlayerDragger.Item != null)
-        {
-            PlayerDragger.ItemRotate();
-        }
-    }
-
-    public StateBuild(FSM fsm, PlayerDragger playerDragger, LayerMask ignoreLayers, float reachBildDistance) : base(fsm,
-        playerDragger)
-    {
-        _ignoreLayers = ignoreLayers;
-        _reachBildDistance = reachBildDistance;
     }
 }

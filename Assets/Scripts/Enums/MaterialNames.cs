@@ -1,7 +1,10 @@
-public enum MaterialNames
+namespace Enums
 {
-    Normal,
-    Fade,
-    Positive,
-    Negative
+    public enum MaterialNames
+    {
+        Normal,
+        Fade,
+        Positive,
+        Negative
+    }
 }

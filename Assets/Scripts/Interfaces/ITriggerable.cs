@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public interface ITriggerable
+namespace Interfaces
 {
-    public void OnTriggerEnter(Collider other);
-    public void OnTriggerExit(Collider other);
+    public interface ITriggerable
+    {
+        public void OnTriggerEnter(Collider other);
+        public void OnTriggerExit(Collider other);
+    }
 }

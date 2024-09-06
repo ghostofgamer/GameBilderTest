@@ -1,3 +1,5 @@
+using EnvironmentContent;
+using Interfaces;
 using UnityEngine;
 
 public class Sphere : Item, IPlaceable

@@ -1,13 +1,17 @@
+using EnvironmentContent;
 using UnityEngine;
 
-public class SphereTrigger : ItemTrigger
+namespace ItemTriggers
 {
-    protected override void CheckTrigger(Collider other, bool value)
+    public class SphereTrigger : ItemTrigger
     {
-        if (!Item.IsBuildStage)
-            return;
+        protected override void CheckTrigger(Collider other, bool value)
+        {
+            if (!Item.IsBuildStage)
+                return;
 
-        if (other.TryGetComponent<Item>(out _) || other.TryGetComponent<Floor>(out _))
-            Item.SetInvalidPosition(value);
+            if (other.TryGetComponent<Item>(out _) || other.TryGetComponent<Floor>(out _))
+                Item.SetInvalidPosition(value);
+        }
     }
 }
