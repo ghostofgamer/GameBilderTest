@@ -1,4 +1,5 @@
 using FSMContent.States;
+using PlayerContent;
 using UnityEngine;
 
 namespace FSMContent

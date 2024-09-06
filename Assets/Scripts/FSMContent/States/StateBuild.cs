@@ -1,5 +1,6 @@
 using EnvironmentContent;
 using Interfaces;
+using PlayerContent;
 using UnityEngine;
 
 namespace FSMContent.States

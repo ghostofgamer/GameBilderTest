@@ -1,56 +1,61 @@
 using Interfaces;
 using UnityEngine;
 
-public class PlayerDragger : MonoBehaviour
+namespace PlayerContent
 {
-    [SerializeField] private Transform _defaultPositionItem;
-    [SerializeField] private float _offset = 0.1f;
+    public class PlayerDragger : MonoBehaviour
+    {
+        private const string MouseScrollWheel = "Mouse ScrollWheel";
+        
+        [SerializeField] private Transform _defaultPositionItem;
+        [SerializeField] private float _offset = 0.1f;
 
-    private float currentRotation = 0f;
+        private float _currentRotation = 0f;
+        private  float _step = 45;
+        private  float _scroll;
+        private IItemMovable _itemMovable;
+        
+        public Item Item { get; private set; }
     
-    private IItemMovable ItemMovable { get; set; }
-
-    public Item Item { get; private set; }
-    
-    public void SetItem(Item item)
-    {
-        Item = item;
-        ItemMovable = Item.GetComponent<IItemMovable>();
-        Item.transform.position = _defaultPositionItem.position;
-        Item.transform.parent = transform;
-        Item.ActivateBildStage();
-        currentRotation = Item.transform.rotation.y;
-    }
-
-    public void Drag(RaycastHit hit)
-    {
-        ItemMovable.Move(hit, _offset, currentRotation);
-    }
-
-    public void Drop()
-    {
-        if (Item != null && Item.IsPermissionBuild)
+        public void SetItem(Item item)
         {
-            Item.transform.parent = null;
-            Item.DeactivateBildStage();
-            Item = null;
+            Item = item;
+            _itemMovable = Item.GetComponent<IItemMovable>();
+            Item.transform.position = _defaultPositionItem.position;
+            Item.transform.parent = transform;
+            Item.ActivateBildStage();
+            _currentRotation = Item.transform.rotation.y;
         }
-    }
 
-    public void ItemRotate()
-    {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        float step = 45;
+        public void Drag(RaycastHit hit)
+        {
+            _itemMovable.Move(hit, _offset, _currentRotation);
+        }
 
-        if (scroll > 0)
-            currentRotation += step;
-        else if (scroll < 0)
-            currentRotation -= step;
-    }
+        public void Drop()
+        {
+            if (Item != null && Item.IsPermissionBuild)
+            {
+                Item.transform.parent = null;
+                Item.DeactivateBildStage();
+                Item = null;
+            }
+        }
 
-    public void ReturnPosition()
-    {
-        Item.transform.position = _defaultPositionItem.position;
-        Item.ReturnDefaultSettings();
+        public void ItemRotate()
+        {
+            _scroll = Input.GetAxis(MouseScrollWheel);
+
+            if (_scroll > 0)
+                _currentRotation += _step;
+            else if (_scroll < 0)
+                _currentRotation -= _step;
+        }
+
+        public void ReturnPosition()
+        {
+            Item.transform.position = _defaultPositionItem.position;
+            Item.ReturnDefaultSettings();
+        }
     }
 }

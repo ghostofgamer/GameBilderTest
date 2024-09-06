@@ -45,11 +45,9 @@
           </e>
           <e p="PlayerContent" t="Include">
             <e p="CameraMovement.cs" t="Include" />
-            <e p="Dragger.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerDragger.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
-            <e p="PlayerReach.cs" t="Include" />
           </e>
         </e>
       </e>

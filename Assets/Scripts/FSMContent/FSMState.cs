@@ -1,4 +1,6 @@
 
+using PlayerContent;
+
 namespace FSMContent
 {
     public abstract class FSMState
