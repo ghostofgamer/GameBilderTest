@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ce1822c2-0d80-47a2-aade-82cefb351ad9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameBilderTest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMInitializator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMInitializator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/FSMState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FSMContent/States/StateAction.cs" afterDir="false" />
@@ -30,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Dragger.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerReach.cs.meta" beforeDir="false" />
     </list>
@@ -61,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ground.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Items.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Item.cs" />
@@ -108,6 +109,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerDragger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerContent/PlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -124,6 +126,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Bild\BilderGame.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\Repository\GameBilderTest\Bild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -156,7 +166,7 @@
       <workItem from="1725438679391" duration="16965000" />
       <workItem from="1725522335211" duration="11378000" />
       <workItem from="1725534778782" duration="9042000" />
-      <workItem from="1725613739991" duration="2591000" />
+      <workItem from="1725613739991" duration="3464000" />
     </task>
     <servers />
   </component>

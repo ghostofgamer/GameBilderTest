@@ -1198,12 +1198,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 815309113}
   _speed: 13
-  _jumpHight: 3
-  _groundCheck: {fileID: 1294705345}
-  _groundDistance: 0.5
-  _groundMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!136 &815309116
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1315,6 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultPositionItem: {fileID: 1648563555}
   _materialFade: {fileID: 2100000, guid: 9ce6da9c105a47548ae189dd36bd5e3c, type: 2}
+  <Item>k__BackingField: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1322,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   - component: {fileID: 963194231}
   - component: {fileID: 963194234}
   m_Layer: 8
@@ -1416,28 +1410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe067c9d087a9e64393e8d3aa66d3728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mouseSensivity: 100
+  _mouseSensivity: 150
   _playerBody: {fileID: 815309119}
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d492ee45b6b0dac43865e31084f88906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _reachDistance: 10
-  _reachBildDistance: 15
-  _offset: 1.5
-  _ignoreLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  _defaultPositionItem: {fileID: 1648563555}
-  _materialFade: {fileID: 2100000, guid: 9ce6da9c105a47548ae189dd36bd5e3c, type: 2}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
